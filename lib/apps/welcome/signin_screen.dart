@@ -103,7 +103,7 @@ class _SigninScreenState extends State<SigninScreen> {
               children: [
                 new CircularProgressIndicator(),
                 SizedBox(height: 20),
-                new Text("Authenticating..."),
+                new Text("Sedang memeriksa..."),
               ],
             ),
           ),
