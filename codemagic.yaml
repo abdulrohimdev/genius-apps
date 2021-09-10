@@ -8,10 +8,10 @@ workflows:
         XCODE_WORKSPACE: "Runner.xcworkspace"
         XCODE_SCHEME: "Runner"                
         # https://docs.codemagic.io/code-signing-yaml/signing-ios/
-        # APP_STORE_CONNECT_ISSUER_ID: Encrypted(...) # <-- Put your encrypted App Store Connect Issuer Id here 
-        # APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted(...) # <-- Put your encrypted App Store Connect Key Identifier here 
-        # APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted App Store Connect Private Key here 
-        # CERTIFICATE_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted Certificate Private Key here 
+        APP_STORE_CONNECT_ISSUER_ID: 7d812fe2-8abd-47ca-9d27-3ed7e62d7b6d # <-- Put your encrypted App Store Connect Issuer Id here 
+        APP_STORE_CONNECT_KEY_IDENTIFIER: L88QP7RF94 # <-- Put your encrypted App Store Connect Key Identifier here 
+        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted App Store Connect Private Key here 
+        CERTIFICATE_PRIVATE_KEY: Encrypted(...) # <-- Put your encrypted Certificate Private Key here 
         BUNDLE_ID: "io.codemagic.flutteryaml" # <-- Put your bundle id here
         APP_STORE_ID: 1111111111 # <-- Use the TestFlight Apple id number (An automatically generated ID assigned to your app) found under General > App Information > Apple ID. 
       flutter: stable
@@ -69,9 +69,9 @@ workflows:
         notify:
           success: true               # To receive a notification when a build succeeds
           failure: false              # To not receive a notification when a build fails
-      # app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
-      #   api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
-      #   key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-      #   issuer_id: 21d78e2f-b8ad-...  # Alphanumeric value that identifies who created the API key, can also reference environment variable such as $APP_STORE_CONNECT_ISSUER_ID
+      app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: 21d78e2f-b8ad-...  # Alphanumeric value that identifies who created the API key, can also reference environment variable such as $APP_STORE_CONNECT_ISSUER_ID
        
      
