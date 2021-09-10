@@ -43,6 +43,7 @@ workflows:
       - name: Install pods
         script: |
                     find . -name "Podfile" -execdir pod install \;
+                    ssh-keygen -t rsa -b 2048 -f ~/Desktop/codemagic_private_key -q -N "";
       - name: Flutter build ipa and automatic versioning
         script: |
           flutter build ipa --release \
