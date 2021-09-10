@@ -10,7 +10,7 @@ workflows:
         # https://docs.codemagic.io/code-signing-yaml/signing-ios/
         APP_STORE_CONNECT_ISSUER_ID: 7d812fe2-8abd-47ca-9d27-3ed7e62d7b6d # <-- Put your encrypted App Store Connect Issuer Id here 
         APP_STORE_CONNECT_KEY_IDENTIFIER: L88QP7RF94 # <-- Put your encrypted App Store Connect Key Identifier here 
-        APP_STORE_CONNECT_PRIVATE_KEY: app_store_connect_api_key(
+        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(
                                           key_id: "L88QP7RF94",
                                           issuer_id: "7d812fe2-8abd-47ca-9d27-3ed7e62d7b6d"
                                          
