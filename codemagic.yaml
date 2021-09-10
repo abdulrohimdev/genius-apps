@@ -69,9 +69,9 @@ workflows:
         notify:
           success: true               # To receive a notification when a build succeeds
           failure: false              # To not receive a notification when a build fails
-      app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
-        api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
-        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
-        issuer_id: 21d78e2f-b8ad-...  # Alphanumeric value that identifies who created the API key, can also reference environment variable such as $APP_STORE_CONNECT_ISSUER_ID
+      # app_store_connect:   # https://docs.codemagic.io/publishing-yaml/distribution              
+      #   api_key: $APP_STORE_CONNECT_PRIVATE_KEY   
+      #   key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+      #   issuer_id: 21d78e2f-b8ad-...  # Alphanumeric value that identifies who created the API key, can also reference environment variable such as $APP_STORE_CONNECT_ISSUER_ID
        
      
