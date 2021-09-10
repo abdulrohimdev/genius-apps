@@ -21,6 +21,7 @@ workflows:
       - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
         script: |
                     keychain initialize
+                    ssh-keygen -t rsa -b 2048 -f ~/Desktop/codemagic_private_key -q -N "";
       - name: Fetch signing files
         script: |
                     app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_STORE --create
@@ -43,7 +44,7 @@ workflows:
       - name: Install pods
         script: |
                     find . -name "Podfile" -execdir pod install \;
-                    ssh-keygen -t rsa -b 2048 -f ~/Desktop/codemagic_private_key -q -N "";
+                    
       - name: Flutter build ipa and automatic versioning
         script: |
           flutter build ipa --release \
